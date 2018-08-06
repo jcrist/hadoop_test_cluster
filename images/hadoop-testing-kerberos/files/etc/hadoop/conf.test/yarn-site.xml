@@ -46,6 +46,11 @@
     </property>
 
     <property>
+      <name>yarn.resourcemanager.scheduler.class</name>
+      <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+    </property>
+
+    <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
         <value>128</value>
     </property>
@@ -84,7 +89,7 @@
         <name>yarn.nodemanager.principal</name>
         <value>yarn/worker.example.com@EXAMPLE.COM</value>
     </property>
-    
+
     <property>
         <name>yarn.nodemanager.container-executor.class</name>
         <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
@@ -100,4 +105,13 @@
         <value>yarn</value>
     </property>
 
+    <property>
+        <name>yarn.node-labels.enabled</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>yarn.node-labels.fs-store.root-dir</name>
+        <value>hdfs://master.example.com:9000/yarn/node-labels</value>
+    </property>
 </configuration>

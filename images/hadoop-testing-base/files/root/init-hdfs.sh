@@ -44,7 +44,11 @@ hdfs dfs -mkdir -p /tmp \
 && hdfs dfs -chmod -R 1777 /user/history \
 && hdfs dfs -chown mapred:hadoop /user/history \
 && hdfs dfs -mkdir -p /user/testuser \
-&& hdfs dfs -chown testuser /user/testuser
+&& hdfs dfs -chown testuser /user/testuser \
+&& hdfs dfs -mkdir -p /yarn/node-labels \
+&& hdfs dfs -chown -R yarn:yarn /yarn \
+&& hdfs dfs -chmod -R 700 /yarn
+
 
 exit_code=$?
 if [[ $exit_code != 0 ]]; then
