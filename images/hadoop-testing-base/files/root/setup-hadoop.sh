@@ -29,5 +29,4 @@ echo "127.0.0.1 master.example.com" >> /etc/hosts
 su -c "hdfs namenode" hdfs&
 su -c "hdfs datanode" hdfs&
 sudo -u hdfs /root/init-hdfs.sh
-
 killall java
