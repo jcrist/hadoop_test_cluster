@@ -30,8 +30,9 @@ services:
     hostname: worker0
     domainname: example.com
     ports:
+      - 50010:50010  # DN
       - 50071:50075  # DN webui
-      - 8041:8042    # NM webui
+      - 8040:8042    # NM webui
     tmpfs:
       - /tmp:noexec
 
@@ -43,8 +44,9 @@ services:
     hostname: worker1
     domainname: example.com
     ports:
+      - 50011:50010  # DN
       - 50072:50075  # DN webui
-      - 8042:8042    # NM webui
+      - 8041:8042    # NM webui
     tmpfs:
       - /tmp:noexec
 
