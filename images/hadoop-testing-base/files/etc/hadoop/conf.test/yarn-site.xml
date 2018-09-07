@@ -46,8 +46,8 @@
     </property>
 
     <property>
-      <name>yarn.resourcemanager.scheduler.class</name>
-      <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
     </property>
 
     <property>
@@ -73,10 +73,5 @@
     <property>
         <name>yarn.node-labels.enabled</name>
         <value>true</value>
-    </property>
-
-    <property>
-        <name>yarn.node-labels.fs-store.root-dir</name>
-        <value>hdfs://master.example.com:9000/yarn/node-labels</value>
     </property>
 </configuration>
