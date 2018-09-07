@@ -1,0 +1,36 @@
+<configuration>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.queues</name>
+        <value>default</value>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.capacity</name>
+        <value>100.0</value>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.capacity.root.default.accessible-node-labels</name>
+        <value>*</value>
+    </property>
+
+    <!-- YARN sets queue max capacity to a single vcore. I have failed to
+         diagnose the cause of this. Moreover, the memory capacity of the
+         queue is 50%:
+
+         User limit computation for testuser in queue default [...]
+             limit: <memory:8192, vCores:1>
+             queueCapacity: <memory:8192, vCores:1>
+             [...]
+             clusterCapacity: <memory:16384, vCores:32>
+
+         The following property allows the application to go over the queue
+         capacity.
+    -->
+    <property>
+        <name>yarn.scheduler.capacity.root.default.user-limit-factor</name>
+        <value>4.0</value>
+    </property>
+
+</configuration>

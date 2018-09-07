@@ -22,16 +22,31 @@ services:
     tmpfs:
       - /tmp:noexec
 
-  worker:
+  worker0:
     image: '${HADOOP_TESTING_IMAGE}'
     user: root
     command: supervisord -c /etc/worker.supervisord.conf
-    container_name: worker
-    hostname: worker
+    container_name: worker0
+    hostname: worker0
     domainname: example.com
     ports:
-      - 50075:50075  # DN webui
-      - 8042:8042    # NM webui
+      - 50010:50010  # DN
+      - 50071:50075  # DN webui
+      - 8040:8042    # NM webui
+    tmpfs:
+      - /tmp:noexec
+
+  worker1:
+    image: '${HADOOP_TESTING_IMAGE}'
+    user: root
+    command: supervisord -c /etc/worker.supervisord.conf
+    container_name: worker1
+    hostname: worker1
+    domainname: example.com
+    ports:
+      - 50011:50010  # DN
+      - 50072:50075  # DN webui
+      - 8041:8042    # NM webui
     tmpfs:
       - /tmp:noexec
 

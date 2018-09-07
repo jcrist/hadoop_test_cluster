@@ -46,8 +46,13 @@
     </property>
 
     <property>
+        <name>yarn.resourcemanager.scheduler.class</name>
+        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+    </property>
+
+    <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
-        <value>128</value>
+        <value>32</value>
     </property>
 
     <property>
@@ -65,4 +70,8 @@
         <value>16</value>
     </property>
 
+    <property>
+        <name>yarn.node-labels.enabled</name>
+        <value>true</value>
+    </property>
 </configuration>
