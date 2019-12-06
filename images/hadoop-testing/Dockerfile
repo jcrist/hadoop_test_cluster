@@ -1,7 +1,7 @@
 ARG VERSION=latest
 
 FROM jcrist/hadoop-testing-common:$VERSION
-MAINTAINER jcrist
+LABEL maintainer="jcrist"
 
 # Install kerberos
 RUN yum install -y \

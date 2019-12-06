@@ -1,11 +1,12 @@
 FROM centos:centos7
-MAINTAINER jcrist
+LABEL maintainer="jcrist"
 
 # Install common utilities
 RUN yum install -y \
         sudo \
         git \
         bzip2 \
+        unzip \
         java-1.8.0-openjdk-devel \
     && yum clean all \
     && rm -rf /var/cache/yum
