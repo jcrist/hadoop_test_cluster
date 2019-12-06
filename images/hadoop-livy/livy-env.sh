@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+
+# Copied from a functional EMR cluster
+export SPARK_HOME=${SPARK_HOME:-/usr/lib/spark}
+export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-/etc/hadoop/conf}
+export LIVY_LOG_DIR=${LIVY_LOG_DIR:-/var/log/livy}
+export LIVY_PID_DIR=${LIVY_PID_DIR:-/var/run/livy}
+
+
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
