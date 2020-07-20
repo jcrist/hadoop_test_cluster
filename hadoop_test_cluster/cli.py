@@ -201,8 +201,8 @@ def parse_image_config(image, config):
 def htcluster_startup(image, config, mount=()):
     image, config = parse_image_config(image.lower(), config.lower())
 
-    env = dict(HADOOP_TESTING_FIXUID=str(os.getuid()),
-               HADOOP_TESTING_FIXGID=str(os.getgid()),
+    env = dict(HADOOP_TESTING_FIXUID=str(os.getuid()) if hasattr(os, "getuid") else "1000",
+               HADOOP_TESTING_FIXGID=str(os.getgid()) if hasattr(os, "getgid") else "1000",
                HADOOP_TESTING_IMAGE=image,
                HADOOP_TESTING_CONFIG=config)
 
